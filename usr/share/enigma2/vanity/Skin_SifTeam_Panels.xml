@@ -1,0 +1,679 @@
+<skin>
+	<!--
+		<panel name="GenericLayoutTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="4Buttons" />
+		<panel name="PigTemplate" />
+	-->
+
+	<!-- SIFTeam Panels -->
+
+	<!-- action box -->
+	<screen name="ExtraActionBox" position="0,0" size="1280,720" title="Extra ActionBox" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<widget font="Regular;24" halign="center" name="message" position="70,120" size="720,48" valign="center" transparent="1" />
+	</screen>
+
+	<!-- Blue panel -->
+	        <screen name="Panel" position="0,0" size="1280,720" title="SIF Panel" flags="wfNoBorder"> 
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ScrollBarTemplate440" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,120" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (51, 0), size = (680, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					],
+					"fonts": [gFont("Regular", 28)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- Blue panel customization -->
+	<screen name="PanelConfig" position="0,0" size="1280,720" title="Panel Config" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,120" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (51, 0), size = (680, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					],
+					"fonts": [gFont("Regular", 28)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="PanelConfigAdd" position="0,0" size="1280,720" title="Panel Config Addons" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,120" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (51, 0), size = (680, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					],
+					"fonts": [gFont("Regular", 28)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- emulator -->
+	<screen name="Emulator" position="0,0" size="1280,720" title="Emulators" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap position="0,538" zPosition="1" size="830,93" pixmap="vanity/menu/nextevent.png" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,130" size="730,200" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 0), size = (145, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+					MultiContentEntryText(pos = (205, 0), size = (75, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (285, 0), size = (355, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					MultiContentEntryPixmapAlphaTest(pos = (660, 0), size = (24, 24), png = 3),
+				],
+				"fonts": [gFont("Regular", 24)],
+				"itemHeight": 40
+				}
+			</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,390" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Name</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,420" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">System</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,450" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">CaID</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,480" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Pid</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,510" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Protocol</convert>
+		</widget>
+		<widget halign="left" font="Regular;20" position="70,577" render="Label" size="720,25" source="session.CurrentService" transparent="1" foregroundColor="bluette" backgroundColor="black" zPosition="2" >
+			<convert type="EmuCamInfo">Address</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,390" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">ProvID</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,420" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Time</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,450" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Hops</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,480" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">CW0</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,510" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">CW1</convert>
+		</widget>
+	</screen>
+
+	<!-- card server -->
+	<screen name="CardServer" position="0,0" size="1280,720" title="Card Servers" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="0,538" zPosition="1" size="830,93" pixmap="vanity/menu/nextevent.png" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,130" size="730,200" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 0), size = (145, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+					MultiContentEntryText(pos = (205, 0), size = (75, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (285, 0), size = (355, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					MultiContentEntryPixmapAlphaTest(pos = (660, 0), size = (24, 24), png = 3),
+				],
+				"fonts": [gFont("Regular", 24)],
+				"itemHeight": 40
+				}
+			</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,390" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Name</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,420" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">System</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,450" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">CaID</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,480" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Pid</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="70,510" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Protocol</convert>
+		</widget>
+		<widget halign="left" font="Regular;20" position="70,577" render="Label" size="720,25" source="session.CurrentService" transparent="1" foregroundColor="bluette" backgroundColor="black" zPosition="2" >
+			<convert type="EmuCamInfo">Address</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,390" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">ProvID</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,420" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Time</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,450" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">Hops</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,480" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">CW0</convert>
+		</widget>
+		<widget halign="left" font="Regular;23" position="484,510" render="Label" size="275,25" source="session.CurrentService" transparent="1">
+			<convert type="EmuCamInfo">CW1</convert>
+		</widget>
+	</screen>
+
+	<!-- MainPanels -->
+	<screen name="SMCategories" position="0,0" size="1280,720" title="Software Manager Categories" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/plugin_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="70,120" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 0), size = (450, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (510, 11), size = (170, 38), font=1, flags = RT_HALIGN_RIGHT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 28), gFont("Regular", 20)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="SMFeeds" position="0,0" size="1280,720" title="Software Manager Feeds" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_down.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="70,120" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 0), size = (450, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (510, 11), size = (130, 38), font=1, flags = RT_HALIGN_RIGHT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 28), gFont("Regular", 20)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="STCategories" position="0,0" size="1280,720" title="Settings Categories" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/plugin_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="70,120" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 0), size = (535, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (550, 11), size = (170, 38), font=1, flags = RT_HALIGN_RIGHT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 28), gFont("Regular", 20)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="DaemonsList" position="0,0" size="1280,720" title="Daemons List" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,120" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 3), size = (150, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (250, 7), size = (450, 38), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					MultiContentEntryPixmapAlphaTest(pos = (680, 10), size = (24, 24), png = 3),
+					],
+					"fonts": [gFont("Regular", 24),gFont("Regular", 20)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="STSettings" position="0,0" size="1280,720" title="Setup Settings" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="1Buttons" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/ico_setup.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="70,120" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 0), size = (455, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (550, 11), size = (130, 38), font=1, flags = RT_HALIGN_RIGHT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 28), gFont("Regular", 20)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- hdd screens -->
+	<screen name="HddInfo" position="0,0" size="1280,720" title="HardDisk Info" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_setup.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" scrollbarMode="showOnDemand" size="720,26" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+		<widget font="Regular;22" halign="left" name="model"     position="70,172" size="670,26" valign="center" transparent="1" />
+		<widget font="Regular;22" halign="left" name="serial"    position="70,209" size="670,26" valign="center" transparent="1" />
+		<widget font="Regular;22" halign="left" name="firmware"  position="70,245" size="670,26" valign="center" transparent="1" />
+		<widget font="Regular;22" halign="left" name="cylinders" position="70,282" size="670,26" valign="center" transparent="1" />
+		<widget font="Regular;22" halign="left" name="heads"     position="70,319" size="670,26" valign="center" transparent="1" />
+		<widget font="Regular;22" halign="left" name="sectors"   position="70,355" size="670,26" valign="center" transparent="1" />
+		<widget font="Regular;22" halign="left" name="readDisk"  position="70,390" size="670,26" valign="center" transparent="1" />
+		<widget font="Regular;22" halign="left" name="readCache" position="70,426" size="670,26" valign="center" transparent="1" />
+		<widget font="Regular;22" halign="left" name="temp"      position="70,462" size="670,26" valign="center" transparent="1" />
+	</screen>
+
+	<screen name="HddMount" position="0,0" size="1280,720" title="HardDisk Mount" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="menu" position="70,120" scrollbarMode="showOnDemand" size="720,400" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+	</screen>
+
+	<screen name="HddFastRemove" position="0,0" size="1280,720" title="HardDisk Fast Remove" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="2Buttons" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,120" size="720,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_700x50.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (5, 0), size = (48, 48), png = 0),
+					MultiContentEntryText(pos = (50, 3), size = (200, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (50, 27), size = (200, 38), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 22), gFont("Regular", 18)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="HddPartitions" position="0,0" size="1280,720" title="HardDisk Partitions" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="label_disk" position="80,120" font="Regular;34" halign="left" size="720,40" valign="center" foregroundColor="#808080" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,180" size="720,360" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png"  transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 3), size = (600, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (405, 3), size = (300, 38), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="HddSetup" position="0,0" size="1280,720" title="HardDisk Setup" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,130" size="720,440" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (50, 0), size = (400, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (405, 10), size = (300, 38), font=1, flags = RT_HALIGN_RIGHT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 28), gFont("Regular", 24)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- scripts -->
+	<screen name="Scripts" position="0,0" size="1280,720" title="Scripts" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="ScrollBarTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_code.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="list" position="70,120" scrollbarMode="showOnDemand" size="720,400" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+		<widget font="Regular; 20" halign="left" name="statuslab" position="70,575" size="720,24" transparent="1" />
+	</screen>
+
+	<!-- swap -->
+	<screen name="Swap" position="0,0" size="1280,720" title="Swapp Manager" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap position="0,538" zPosition="1" size="830,93" pixmap="vanity/menu/nextevent.png" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" size="720,400" scrollbarMode="showOnDemand" transparent="1" selectionPixmap="vanity/icons/ls_720x24.png"  />
+		<widget font="Regular; 24" halign="left" name="status" position="75,575" size="670,26" valign="center" zPosition="2" foregroundColor="bluette" transparent="1"  />
+	</screen>
+
+	<!-- preferences -->
+	<screen name="Preferences" position="0,0" size="1280,720" title="Preferences" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" scrollbarMode="showOnDemand" transparent="1" selectionPixmap="vanity/icons/ls_700x50.png" size="720,450" />
+	</screen>
+
+	<!-- kernel modules -->
+	<screen name="KernelModules" position="0,0" size="1280,720" title="Kernel Modules" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" scrollbarMode="showOnDemand" transparent="1" selectionPixmap="vanity/icons/ls_700x50.png" size="720,450" />
+	</screen>
+
+	<!-- about team -->
+	<screen name="AboutTeam" position="0,0" size="1280,720" title="About Team" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/info_screen.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="about" font="Regular; 25" position="70,120" transparent="1" size="720,450" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+	</screen>
+	
+	<!-- ### Software Manager ### -->
+
+	<screen name="SMFileBrowser" position="0,0" size="1280,720" title="Software Manager FileBrowser" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_down.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="filelist" position="65,120" size="720,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" zPosition="1" />
+	</screen>
+
+	<screen name="SMLog" position="0,0" size="1280,720" title="Software Manager Logs" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/ico_code.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="info" font="Regular;28" position="70,120" size="720,40" scrollbarMode="showOnDemand" foregroundColor="bluette" backgroundColor="black" transparent="1" />
+		<widget name="log" font="Regular;17" position="70,160" size="720,415" scrollbarMode="showOnDemand" foregroundColor="white" backgroundColor="black" transparent="1" />
+	</screen>
+
+	<screen name="SMPackage" position="0,0" size="1280,720" title="Software Manager Package" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap position="0,538" zPosition="1" size="830,93" pixmap="vanity/menu/nextevent.png" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="vanity/menu/plugin_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="title" font="Regular;28" position="70,120" size="400,30" scrollbarMode="showOnDemand" halign="left" valign="top" foregroundColor="bluette" transparent="1" />
+		<widget name="rating" font="Regular;24" position="70,170" size="720,25" scrollbarMode="showOnDemand" halign="left" valign="top" backgroundColor="black" transparent="1" />
+		<widget name="description" font="Regular;24" position="70,210" size="540,330" scrollbarMode="showOnDemand" halign="left" valign="top" backgroundColor="black" transparent="1" />
+		<widget name="star1" position="624,120" size="24,24" alphatest="on" transparent="1" />
+		<widget name="star2" position="648,120" size="24,24" alphatest="on" transparent="1" />
+		<widget name="star3" position="672,120" size="24,24" alphatest="on" transparent="1" />
+		<widget name="star4" position="696,120" size="24,24" alphatest="on" transparent="1" />
+		<widget name="star5" position="720,120" size="24,24" alphatest="on" transparent="1" />
+		<widget name="label" font="Regular;24" position="70,575" size="540,28" zPosition="2" scrollbarMode="showOnDemand" halign="left" valign="top" foregroundColor="bluette" backgroundColor="black" transparent="1" />
+	</screen>
+
+	<screen name="SMPackages" position="0,0" size="1280,720" title="Software Manager Packages" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/plugin_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="55,120" size="735,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_730x50.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (5, 4), size = (24, 24), png = 0),
+					MultiContentEntryText(pos = (35, -2), size = (550, 28), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+					MultiContentEntryText(pos = (35, 26), size = (750, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 7),
+					MultiContentEntryPixmapAlphaTest(pos = (570, 3), size = (24, 24), png = 2),
+					MultiContentEntryPixmapAlphaTest(pos = (595, 3), size = (24, 24), png = 3),
+					MultiContentEntryPixmapAlphaTest(pos = (620, 3), size = (24, 24), png = 4),
+					MultiContentEntryPixmapAlphaTest(pos = (645, 3), size = (24, 24), png = 5),
+					MultiContentEntryPixmapAlphaTest(pos = (670, 3), size = (24, 24), png = 6),
+					],
+					"fonts": [gFont("Regular", 20), gFont("Regular", 18)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="SMRank" position="0,0" size="1280,720" title="Software Manager Rank" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/info_screen.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget font="Regular;28" name="text" position="55,120" size="730,100" halign="center" valign="left" foregroundColor="bluette" backgroundColor="black" transparent="1" />
+		<widget source="list" render="Listbox" position="55,180" size="725,300" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_730x50.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (150, 6), size = (24, 24), png = 0),
+					MultiContentEntryPixmapAlphaTest(pos = (175, 6), size = (24, 24), png = 1),
+					MultiContentEntryPixmapAlphaTest(pos = (200, 6), size = (24, 24), png = 2),
+					MultiContentEntryPixmapAlphaTest(pos = (225, 6), size = (24, 24), png = 3),
+					MultiContentEntryPixmapAlphaTest(pos = (250, 6), size = (24, 24), png = 4),
+					MultiContentEntryText(pos = (285, 0), size = (260, 34), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 5),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="SMScreenshot" position="0,0" size="1280,720" title="SM ScreenShot" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="screenshot" position="70,120" size="720,450" alphatest="on" transparent="0" selectionPixmap="vanity/icons/ls_700x50.png" backgroundColor="black" />
+	</screen>
+
+	<screen name="SMSort" position="0,0" size="1280,720" title="SM Sort" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/plugin_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="55,120" size="720,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_730x50.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (10, 0), size = (540, 34), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 0),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="SMStatus" position="0,0" size="1280,720" title="Software Manager Status" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="1Buttons" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/plugin_selection.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="55,120" size="735,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_730x50.png"  foregroundColor="white" backgroundColor="black" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (10, 3), size = (24, 24), png = 0),
+					MultiContentEntryText(pos = (50, -2), size = (650, 28), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+					MultiContentEntryText(pos = (60, 25), size = (650, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2),
+					],
+					"fonts": [gFont("Regular", 20), gFont("Regular", 18)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<screen name="SMUpgrades" position="0,0" size="1280,720" title="SM Upgrades" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/ico_down.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="55,120" size="735,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_730x50.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (5, 8), size = (48, 48), png = 0),
+					MultiContentEntryText(pos = (60, -2), size = (490, 25), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 1),
+					MultiContentEntryText(pos = (60, 23), size = (230, 23), font=1, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 2),
+					MultiContentEntryText(pos = (290, 23), size = (30, 23), font=1, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 3),
+					MultiContentEntryText(pos = (320, 23), size = (230, 23), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 4),
+					],
+					"fonts": [gFont("Regular", 20), gFont("Regular", 18)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- cloud -->
+	<screen name="AccountStatusHelper" position="0,0" size="0,0" title="Cloud Account Status" flags="wfNoBorder" />
+	<screen name="AccountStatus" position="0,0" size="1280,720" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/web_browser.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="status" font="Regular; 24" position="70,120" size="720,400" transparent="1" />
+	</screen>
+
+	<screen name="AccountConfiguration" position="0,0" size="1280,720" title="Cloud Account Config" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/web_browser.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" scrollbarMode="showOnDemand" size="720,65" selectionPixmap="vanity/icons/ls_720x24.png"  transparent="1" />
+		<widget name="status" font="Regular; 22" position="70,234" size="720,30" halign="center" valign="center" transparent="1" />
+		<widget name="info" font="Regular; 22" position="70,268" size="720,180" halign="center" valign="center" transparent="1" />
+	</screen>
+
+	<screen name="CloudConfiguration" position="0,0" size="1280,720" title="Cloud Config" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/web_browser.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" size="720,450" transparent="1" />
+	</screen>
+
+	<screen name="STFileBrowser" position="0,0" size="1280,720" title="ST FileBrowser" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="filelist" position="70,120" size="720,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_700x50.png" zPosition="2" transparent="1" />
+	</screen>
+
+	<screen name="STSetup" position="0,0" size="1280,720" title="Settings Setup" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" size="720,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" zPosition="1" transparent="1"/>
+	</screen>
+
+	<screen name="STKeepBouquets" position="0,0" size="1280,720" title="ST Keep Bouquets" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="list" render="Listbox" position="70,120" size="720,450" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_700x50.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (10, 4), size = (32, 32), png = 0),
+					MultiContentEntryText(pos = (45, 5), size = (400, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (450, 5), size = (120, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- EXTRA ACTIONBOX -->
+
+	<screen name="ExtraMessageBox" position="0,0" size="1280,720" title="MessageBox" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<widget name="message" position="80,130" size="720,100" font="Regular;26" foregroundColor="bluette" transparent="1" />
+		<widget source="menu" render="Listbox" position="55,330" size="720,400" scrollbarMode="showOnDemand" 
+		        backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (51, 0), size = (680, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+				],
+				"fonts": [gFont("Regular", 28)],
+				"itemHeight": 40
+				}
+			</convert>
+		</widget>
+	<applet type="onLayoutFinish">
+# this should be factored out into some helper code, but currently demonstrates applets.
+from enigma import eSize, ePoint
+
+orgwidth = self.instance.size().width()
+orgheight = self.instance.size().height()
+orgpos = self.instance.position()
+textsize = self[&quot;message&quot;].getSize()
+
+# y size still must be fixed in font stuff...
+if self[&quot;message&quot;].getText() != &quot;&quot;:
+	textsize = (textsize[0] + 80, textsize[1] + 60)
+else:
+	textsize = (textsize[0] + 80, textsize[1] + 4)
+
+count = len(self.list)
+if count &gt; 7:
+	count = 7
+offset = 48 * count
+wsizex = textsize[0] + 80
+wsizey = textsize[1] + offset + 20
+
+#if (460 &gt; wsizex):
+wsizex = 700
+wsize = (wsizex, wsizey)
+
+# resize
+#self.instance.resize(eSize(*wsize))
+
+# resize label
+self[&quot;message&quot;].instance.resize(eSize(*textsize))
+
+# move list
+listsize = (wsizex - 20, 48 * count)
+self[&quot;menu&quot;].downstream_elements.downstream_elements.instance.move(ePoint(77, textsize[1] + 120))
+self[&quot;menu&quot;].downstream_elements.downstream_elements.instance.resize(eSize(*listsize))
+
+# center window
+#newwidth = wsize[0]
+#newheight = wsize[1]
+#self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()  + (orgheight - newheight)/2))
+	</applet>
+	</screen>
+
+</skin> 

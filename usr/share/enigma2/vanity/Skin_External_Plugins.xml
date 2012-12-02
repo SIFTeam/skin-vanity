@@ -1,0 +1,895 @@
+<skin>
+	<!--
+		<panel name="GenericLayoutTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="4Buttons" />
+		<panel name="PigTemplate" />
+	-->
+
+  	<!-- ############ CROSSEPG ############ -->
+
+  	<!-- CrossEPG Configuration -->
+	<screen name="CrossEPG_Setup" position="0,0" size="1280,720" title="CrossEPG Configuration" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap position="50,655" zPosition="2" size="50,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget name="config" position="65,120" size="725,250" scrollbarMode="showOnDemand" zPosition="1" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="black" transparent="1" />
+		<widget name="information" position="840,350" size="370,300" halign="center" valign="center" font="Regular;22" backgroundColor="black" transparent="1" />
+		<widget position="95,653" size="300,40" name="key_red" font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="2" />
+	</screen>
+
+	<!-- Menu -->
+	<screen name="CrossEPG_Menu" position="0,0" size="1280,720" title="CrossEPG Menu" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<ePixmap position="50,655" zPosition="2" size="50,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="900,370" zPosition="1" size="380,256" pixmap="vanity/menu/ico_crossepg.png" alphatest="on" />
+		<widget source="list" render="Listbox" position="60,120" size="730,440" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="vanity/icons/ls_720x36.png" backgroundColor="black" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (20, 5), size = (32, 32), png = 0),
+					MultiContentEntryText(pos = (60, 5), size = (440, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 40
+				}
+			</convert>
+		</widget>	
+		<eLabel text="Exit" position="95,659" size="300,40" font="Regular;22" halign="left" zPosition="3" backgroundColor="darkgrey" transparent="1"/>
+	</screen>
+
+	<!-- Providers -->
+	<screen name="CrossEPG_Providers" position="0,0" size="1280,720" title="CrossEPG Provider XMLTV-OpenTV-XEPGDB-MHW2-M7-RAI" backgroundColor="transparent" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="PigTemplate" />
+		<panel name="3Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_receiv.png" position="840,370" size="380,256" zPosition="3" alphatest="on" />
+		<widget source="list" render="Listbox" position="60,120" size="730,450" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="black" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (18, 0), size = (700, 32), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+					MultiContentEntryPixmapAlphaTest(pos = (640, 0), size = (40, 40), png = 1),
+					],
+					"fonts": [gFont("Regular", 20)],
+					"itemHeight": 30
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- Order List -->
+	<screen name="CrossEPG_Ordering" position="0,0" size="1280,720" title="CrossEPG Order Download List" backgroundColor="transparent" flags="wfNoBorder" > 
+		<panel name="GenericLayoutTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="PigTemplate" />
+		<panel name="3Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_receiv.png" position="840,370" size="380,256" zPosition="3" alphatest="on" />
+		<widget source="list" render="Listbox" position="60,120" size="730,450" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="black" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (18, 0), size = (700, 32), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+					MultiContentEntryPixmapAlphaTest(pos = (640, 0), size = (40, 40), png = 1),
+					],
+					"fonts": [gFont("Regular", 20)],
+					"itemHeight": 30
+				}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- Information -->
+	<screen name="CrossEPG_Info" position="0,0" size="1280,720" title="CrossEPG - DB Info" backgroundColor="transparent" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap position="50,655" zPosition="2" size="50,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="900,370" zPosition="1" size="380,256" pixmap="vanity/menu/ico_crossepg.png" alphatest="on" />
+		<widget name="version"            position="70,120" size="720,25" font="Regular;26" foregroundColor="bluette" backgroundColor="black" transparent="1" />
+		<ePixmap position="70,150" zPosition="2" size="720,4" pixmap="vanity/menu/line.png" />
+		<widget name="create"             position="70,180" size="720,25" font="Regular;20" backgroundColor="black" transparent="1" />
+		<widget name="last_update"        position="70,210" size="720,25" font="Regular;20" backgroundColor="black" transparent="1" />
+		<ePixmap position="70,240" zPosition="2" size="720,4" pixmap="vanity/menu/line.png" />
+		<widget name="headersdb_size"     position="70,270" size="720,25" font="Regular;20" backgroundColor="black" transparent="1" />
+		<widget name="descriptorsdb_size" position="70,300" size="720,25" font="Regular;20" backgroundColor="black" transparent="1" />
+		<ePixmap position="70,330" zPosition="2" size="720,4" pixmap="vanity/menu/line.png" />
+		<widget name="indexesdb_size"     position="70,360" size="720,25" font="Regular;20" backgroundColor="black" transparent="1" />
+		<widget name="aliasesdb_size"     position="70,390" size="720,25" font="Regular;20" backgroundColor="black" transparent="1" />
+		<widget name="total_size"         position="70,420" size="720,25" font="Regular;20" backgroundColor="black" transparent="1" />
+		<ePixmap position="70,450" zPosition="2" size="720,4" pixmap="vanity/menu/line.png" />
+		<widget name="channels_count"     position="70,480" size="720,25" font="Regular;20" foregroundColor="bluette" backgroundColor="black" transparent="1" />
+		<widget name="events_count"       position="70,510" size="720,25" font="Regular;20" foregroundColor="bluette" backgroundColor="black" transparent="1" />
+		<widget name="hashes_count"       position="70,540" size="720,25" font="Regular;20" foregroundColor="bluette" backgroundColor="black" transparent="1" />
+		<widget position="95,653" size="300,40" name="key_red" font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="2" />
+	</screen>
+
+	<!-- About -->
+	<screen name="CrossEPG_About" position="0,0" size="1280,720" title="CrossEPG About" backgroundColor="transparent" flags="wfNoBorder" > 
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap position="50,655" zPosition="2" size="50,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="900,370" zPosition="1" size="380,256" pixmap="vanity/menu/ico_crossepg.png" alphatest="on" />
+		<widget name="about" position="70,120" size="700,460" font="Regular;20" backgroundColor="black" transparent="1" />
+		<widget position="95,653" size="300,40" name="key_red" font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="2" />
+	</screen>
+
+  	<!-- ############ PLUGIN HIDER ############ -->
+	
+	<!-- Plugin Hider -->
+	<screen name="PluginHiderSetup" position="0,0" size="1280,720" title="PluginHider Setup" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="4Buttons" />
+		<panel name="PigTemplate" />
+	 	<ePixmap position="840,370" zPosition="1" size="380,256" pixmap="vanity/menu/plugin_selection.png" alphatest="blend" transparent="1" />
+		<widget position="80,120" size="320,25" alphatest="on" zPosition="1" name="tabbar" pixmaps="skin_default/epg_now.png,skin_default/epg_next.png,skin_default/epg_more.png" />
+		<widget position="70,121"  valign="center" transparent="1" size="108,22" backgroundColor="black" zPosition="2"  source="plugins"    render="Label" halign="center" font="Regular;18" />
+		<widget position="185,121" valign="center" transparent="1" size="108,22" backgroundColor="black" zPosition="2"  source="extensions" render="Label" halign="center" font="Regular;18" />
+		<widget  position="291,121" valign="center" transparent="1" size="108,22" backgroundColor="black" zPosition="2" source="eventinfo"  render="Label" halign="center" font="Regular;18" />
+		<widget name="list" position="60,145" size="720,330" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x28.png" transparent="1" />
+	</screen>
+
+  	<!-- ############ HDMI CEC ############ -->
+
+	<!-- Plugin HDMI CEC -->
+	<screen name="CecConfig" position="0,0" size="1280,720" title="HDMI CEC: Setup" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="2Buttons" />
+		<panel name="PigTemplate" />
+	 	<ePixmap position="840,370" zPosition="1" size="380,256" pixmap="vanity/menu/plugin_selection.png" alphatest="blend" transparent="1" />
+		<widget name="config" position="60,120" size="730,360" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x28.png" zPosition="1" transparent="1" />
+	</screen>
+
+  	<!-- ############ MODEM ############ -->
+
+	<!-- Plugin Modem -->
+	<screen name="ModemSetup" position="0,0" size="1280,720" title="Modem" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="2Buttons" />
+		<ePixmap position="0,522" zPosition="1" size="830,93" pixmap="vanity/menu/nextplus.png" alphatest="blend" transparent="1" />
+	 	<ePixmap position="840,370" zPosition="1" size="380,256" pixmap="vanity/menu/plugin_selection.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="60,120" size="720,120" selectionPixmap="vanity/icons/ls_720x28.png" transparent="1" />
+		<widget name="state" position="60,555" size="720,80" font="Regular;20" foregroundColor="#538eff" transparent="1" />
+	</screen>
+
+  	<!-- ############ FANCONTROL ############ -->
+
+	<!-- Plugin FanControl -->
+	<screen name="TempFanControl" position="0,0" size="1280,720" title="Fan Control" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="4Buttons" />
+	 	<ePixmap position="840,370" zPosition="1" size="380,256" pixmap="vanity/menu/plugin_selection.png" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" size="720,120" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+		<widget source="SensorTempText0" render="Label" position="70,220" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorTemp0" render="Label" position="160,220" zPosition="1" size="100,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorTempText1" render="Label" position="70,240" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorTemp1" render="Label" position="160,240" zPosition="1" size="100,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorTempText2" render="Label" position="70,260" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorTemp2" render="Label" position="160,260" zPosition="1" size="100,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorTempText3" render="Label" position="70,280" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorTemp3" render="Label" position="160,280" zPosition="1" size="100,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorTempText4" render="Label" position="70,300" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorTemp4" render="Label" position="160,300" zPosition="1" size="100,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorTempText5" render="Label" position="70,320" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorTemp5" render="Label" position="160,320" zPosition="1" size="100,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+			<widget source="SensorTempText6" render="Label" position="70,340" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorTemp6" render="Label" position="160,340" zPosition="1" size="100,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorTempText7" render="Label" position="70,360" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorTemp7" render="Label" position="160,360" zPosition="1" size="100,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorFanText0" render="Label" position="350,220" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorFan0" render="Label" position="440,220" zPosition="1" size="150,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorFanText1" render="Label" position="350,240" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorFan1" render="Label" position="440,240" zPosition="1" size="150,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorFanText2" render="Label" position="350,260" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorFan2" render="Label" position="440,260" zPosition="1" size="150,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorFanText3" render="Label" position="350,280" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorFan3" render="Label" position="440,280" zPosition="1" size="150,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorFanText4" render="Label" position="350,300" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorFan4" render="Label" position="440,300" zPosition="1" size="150,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorFanText5" render="Label" position="350,320" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorFan5" render="Label" position="440,320" zPosition="1" size="150,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorFanText6" render="Label" position="350,340" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorFan6" render="Label" position="440,340" zPosition="1" size="150,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+		<widget source="SensorFanText7" render="Label" position="350,360" zPosition="1" size="90,40" font="Regular;20" halign="left" valign="top" backgroundColor="#9f1313" transparent="1" />
+		<widget source="SensorFan7" render="Label" position="440,360" zPosition="1" size="150,20" font="Regular;19" halign="right" transparent="1" >
+			<convert type="SensorToText"></convert>
+		</widget>
+	</screen>
+
+  	<!-- ############ LCN SCANNER ############ -->
+
+	<screen name="LCNScannerPlugin" position="0,0" size="1280,720" title="SIFTeam LCN" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" size="720,350" scrollbarMode="showOnDemand" zPosition="1" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+	</screen>
+
+
+	<screen name="LCNScannerAbout" position="0,0" size="1280,720" title="SIFTeam - LCN Scanner" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="1Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="about" position="70,120" size="720,330" font="Regular;20" transparent="1" />
+	</screen>
+
+  	<!-- ############ AUTOBACKUP ############ -->
+	
+	<screen name="Config" position="0,0" size="1280,720" title="AutoBackup Configuration" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="0,538" zPosition="1" size="830,93" pixmap="vanity/menu/nextevent.png" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" size="720,200" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+		<widget name="status" position="70,250" size="720,130" font="Regular;24" transparent="1" />
+		<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="700,583" size="14,14" zPosition="3"/>
+		<widget font="Regular;18" halign="left" position="720,580" render="Label" size="55,20" source="global.CurrentTime" transparent="1" valign="center" zPosition="3" backgroundColor="black" >
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget name="statusbar" position="80,575" zPosition="3" size="550,25" font="Regular;22" foregroundColor="bluette" backgroundColor="black" transparent="1" />
+	</screen>
+
+	<screen name="BackupSelection" position="center,center" size="560,400" title="Select files/folders to backup">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4ButtonsW" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="checkList" position="70,120" size="720,350" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+	</screen>
+
+  	<!-- ############ FILEBROWSER ############ -->
+
+	<!-- FileBrowser Config -->    
+	<screen name="FilebrowserConfigScreen" position="0,0" size="1280,720" title="Menu Sort" flags="wfNoBorder" > 
+		<panel name="GenericLayoutTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="2ButtonsW" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+	        <widget name="config" position="60,120" size="720,360" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+            	<widget name="buttonred" position="95,653" size="300,40" valign="center" font="Regular;18" halign="left" zPosition="1"  transparent="1" foregroundColor="white" />
+            	<widget name="buttongreen" position="395,653" size="300,40" font="Regular;18" valign="center" halign="left" zPosition="1"  transparent="1" foregroundColor="white" />
+	</screen>
+
+	<!-- FileBrowser -->    
+	<screen name="FilebrowserScreen" position="0,0" size="1280,720" title="Menu Sort" flags="wfNoBorder" >
+		<panel name="GenericLayoutSmallTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="1160,35" zPosition="4" size="90,45" pixmap="vanity/buttons/key_menu1.png" transparent="1" alphatest="on" /> 
+		<ePixmap position="400,120" zPosition="4" size="29,483" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="400,590" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+            	<widget name="list_left" position="60,120" size="365,483" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_559x24.png" transparent="1"/>
+		<ePixmap position="770,120" zPosition="4" size="29,483" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="770,590" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+            	<widget name="list_right" position="425,120" size="370,483" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_559x24.png" transparent="1"/>
+            	<widget name="red" 	position="95,659"  size="120,30" valign="center" halign="left" zPosition="1" transparent="1" foregroundColor="white" font="Regular;22"/>
+            	<widget name="green" 	position="395,659" size="120,30" valign="center" halign="left" zPosition="1" transparent="1" foregroundColor="white" font="Regular;22"/>
+            	<widget name="yellow" 	position="695,659" size="120,30" valign="center" halign="left" zPosition="1" transparent="1" foregroundColor="white" font="Regular;22"/>
+            	<widget name="blue" 	position="995,659" size="120,30" valign="center" halign="left" zPosition="1" transparent="1" foregroundColor="white" font="Regular;22"/>
+	</screen>
+
+  	<!-- ############ PICTUREPLAYER ############ -->
+  	
+	<!-- Picture Player (ps 23) -->
+	<screen name="picshow" position="0,0" size="1280,720" title="PicturePlayer" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="ScrollBarTemplate450" />
+		<panel name="4ButtonsW" />
+		<ePixmap position="840,370" zPosition="1" size="380,256" pixmap="vanity/menu/ico_picplayer.png" alphatest="blend" transparent="1"/>
+		<widget name="filelist" position="65,120" size="725,460" zPosition="2" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="black" transparent="1" />
+		<widget source="label" render="Label" position="830,350" size="400,160" font="Regular;22" halign="center" transparent="1"/>
+		<widget name="thn" position="836,108" size="395,222" alphatest="on"/>
+	</screen>
+
+	<!-- Pic_Exif (Picture) -->
+	<screen name="Pic_Exif" position="center,center" size="710,340" title="Pic Info">
+		<ePixmap pixmap="vanity/menu/backbox.png" zPosition="-1" position="0,0" size="710,340" alphatest="on" />
+		<ePixmap pixmap="vanity/buttons/red25.png" position="230,280" size="250,40" zPosition="1" alphatest="blend" />
+		<widget source="key_red" render="Label" position="230,276" size="250,40" zPosition="2" font="Regular;22" halign="center" valign="center" transparent="1" backgroundColor="black"/>
+		<widget source="menu" render="Listbox" position="20,20" size="670,240" zPosition="3" scrollbarMode="showOnDemand" transparent="1" selectionDisabled="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (5, 7), size = (350, 30), flags = RT_HALIGN_LEFT, text = 0),
+				MultiContentEntryText(pos = (360, 7), size = (215, 30), flags = RT_HALIGN_LEFT, text = 1)],
+				"fonts": [gFont("Regular", 20)],
+				"itemHeight": 35 }
+			</convert>
+		</widget>
+	</screen>
+	
+  	<!-- ############ OPENWEBIF ############ -->
+
+	<screen name="OpenWebifConfig" position="0,0" size="1280,720" title="OpenWebif Configuration" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="2Buttons" />
+		<panel name="PigTemplate" />
+		<ePixmap position="840,370" zPosition="1" size="380,256" pixmap="vanity/menu/web_browser.png" alphatest="blend" transparent="1"/>
+		<ePixmap position="0,538" zPosition="1" size="830,93" pixmap="vanity/menu/nextevent.png" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" size="720,160" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+		<widget name="lab1" position="80,575" halign="left" size="720,45" zPosition="2" font="Regular;20" valign="top" foregroundColor="bluette" transparent="1" />
+	</screen>
+	
+  	<!-- ############ OPENAIRPLAY ############ -->
+
+	<screen name="OpenAirPlayConfig" position="0,0" size="1280,720" title="SIFTeam OpenAirPlay Configuration" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="2Buttons" />
+		<panel name="PigTemplate" />
+		<ePixmap position="840,370" zPosition="1" size="380,256" pixmap="vanity/menu/web_browser.png" alphatest="blend" transparent="1"/>
+		<widget name="config" position="70,120" size="720,240" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+	</screen>
+	
+  	<!-- ############ ITALYSAT DTT DOWNLOADER ############ -->
+  
+  	<screen name ="ItalysatDtt" position="0,0" size="1280,720" title="ItalySatDTT Download for Dreambox" flags="wfNoBorder" >
+  		<panel name="GenericLayoutTemplate" />
+  		<panel name="PigTemplate" />
+  		<panel name="3Buttons" />
+  		<ePixmap position="0,538" zPosition="1" size="830,93" pixmap="vanity/menu/nextevent.png" alphatest="blend" transparent="1" />
+  		<ePixmap pixmap="vanity/menu/ico_isat.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+  		<widget name="driverinfo" position="211,120" size="185,27" font="Regular;24" halign="center" backgroundColor="black" foregroundColor="bluette" transparent="1" />
+  		<widget name="updateinfo" position="559,120" size="186,27" font="Regular;24" halign="center" backgroundColor="black" foregroundColor="bluette" transparent="1" />
+  		<widget name="tuner1" position="65,150" size="112,48" font="Regular;24" halign="center" valign="center" backgroundColor="black" foregroundColor="bluette" transparent="1" />
+  		<widget name="tuner2" position="65,190" size="112,48" font="Regular;24" valign="center" halign="center" backgroundColor="black" foregroundColor="bluette" transparent="1" />
+  		<widget name="firstdrv" position="151,150" size="309,48" font="Regular;24" halign="center" valign="center" transparent="1" />
+  		<widget name="seconddrv" position="151,190" size="309,48" font="Regular;24" halign="center" valign="center" transparent="1" />
+  		<widget name="firstdate" position="493,150" size="309,48" font="Regular;24" valign="center" halign="center" transparent="1" />
+  		<widget name="seconddate" position="493,190" size="309,48" font="Regular;24" valign="center" halign="center" transparent="1" />
+  		<widget name="lab3" position="70,480" size="287,32" font="Regular;24" halign="center" valign="center" backgroundColor="black" foregroundColor="bluette" transparent="1" />
+  		<widget name="labstop" position="350,480" size="140,32" zPosition="1" font="Regular;24" valign="center" halign="center" foregroundColor="red" backgroundColor="black" transparent="1" />
+  		<widget name="labstart" position="350,480" size="140,32" zPosition="1" font="Regular;24" valign="center" halign="center" foregroundColor="green" backgroundColor="black" transparent="1" />
+  		<widget name="credit" position="70,575" size="720,25" font="Regular;24" halign="center" zPosition="2" backgroundColor="black" foregroundColor="bluette" transparent="1" />
+  	</screen>
+  
+  	<screen name="ItalysatDttConf" position="0,0" size="1280,720" title="ItalySat Usb Tuners Config" flags="wfNoBorder" >
+  		<panel name="GenericLayoutTemplate" />
+  		<panel name="PigTemplate" />
+  		<panel name="3Buttons" />
+  		<ePixmap pixmap="vanity/menu/ico_isat.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+  		<widget source="list" render="Listbox" position="55,120" size="725,440" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_725x80.png" transparent="1" >
+  			<convert type="TemplatedMultiContent">
+  				{"template": [
+  					MultiContentEntryText(pos = (90, 25), size = (690, 80), font=0, text = 0),
+  					MultiContentEntryPixmapAlphaTest(pos = (10, 3), size = (80, 80), png = 1),
+  					],
+  					"fonts": [gFont("Regular", 24),gFont("Regular", 24)],
+  					"itemHeight": 80
+  				}
+  			</convert>
+  		</widget>
+  	</screen>
+  
+  	<screen name="ItalysatDttDriversList" position="0,0" size="1280,720" title="Usb Tuner Available Drivers" flags="wfNoBorder" >
+  		<panel name="GenericLayoutTemplate" />
+  		<panel name="PigTemplate" />
+  		<ePixmap pixmap="vanity/menu/ico_isat.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+  		<ePixmap position="500,663" zPosition="3" size="400,36" pixmap="vanity/vanity2.png" alphatest="blend" transparent="1" />
+  		<widget source="list" render="Listbox" position="60,120" size="720,500" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" >
+  			<convert type="StringList" />
+  		</widget>
+  		<widget name="connection" position="80,400" size="720,30" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+  	</screen>
+  
+  <!-- ############ MYTUBE PLAYER ############ -->
+
+	<!-- MyTubeHistoryScreen -->
+	<screen name="MyTubeHistoryScreen" title="MyTube History" position="55,144" size="740,465" zPosition="6" flags="wfNoBorder" >
+		<ePixmap position="0,0" zPosition="4" size="700,440" pixmap="vanity/menu/bx_youtube.png" alphatest="on" />
+		<widget source="historylist" render="Listbox" position="10,10" zPosition="7" size="670,290" selectionPixmap="vanity/icons/ls_720x24.png" scrollbarMode="showOnDemand"  transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (10, 1), size = (420, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 18)],
+				"itemHeight": 29
+				}
+			</convert>
+		</widget>
+	</screen>
+	
+	<!-- MytubePlayer -->
+	<screen name="MyTubePlayer" position="0,500" size="1280,720" title="MyTube Player" backgroundColor="#ff000000" flags="wfNoBorder">
+		<ePixmap position="0,0" zPosition="-1" size="1280,287" pixmap="vanity/moviebar.png"/>
+		<!-- DateTime -->
+		<widget source="global.CurrentTime" render="Label" position="65,47" size="150,26" font="Regular;22" halign="left" backgroundColor="black" foregroundColor="#c0c0c0" transparent="1" >
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="210,47" size="140,26" zPosition="2" font="Regular;22" halign="left" foregroundColor="#c0c0c0" backgroundColor="black" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="269,49" size="70,26" zPosition="2" font="Regular;18" halign="left" foregroundColor="#538eff" backgroundColor="#333333" transparent="1">
+			<convert type="ClockToText">Format::%S</convert>
+		</widget>			
+		<!-- Audio -->
+		<ePixmap position="90,167" zPosition="2" size="71,26" pixmap="vanity/icons/dolby_of.png" alphatest="blend"/>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="vanity/icons/dolby_on.png" position="90,167" size="71,26" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<!-- Recorder -->
+		<ePixmap pixmap="vanity/icons/icon_norec_light.png" position="1200,51" size="44,26" zPosition="1" alphatest="blend" />
+		<widget source="session.RecordState" render="Pixmap" pixmap="vanity/icons/icon_rec_light.png" position="1200,51" size="44,26" zPosition="2" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		<!-- VideoFormat -->
+		<widget source="session.CurrentService" render="Label" font="Regular;18" position="145,167" size="55,22" halign="right"  foregroundColor="grey" backgroundColor="black" transparent="1">
+			<convert type="ServiceInfo">VideoWidth</convert>
+		</widget>
+		<eLabel text="x" font="Regular;14" position="200,168" size="15,22" halign="center"  backgroundColor="black" transparent="1"/>
+		<widget source="session.CurrentService" render="Label" font="Regular;18" position="213,167" size="55,22" halign="left"  foregroundColor="grey" backgroundColor="black" transparent="1">
+			<convert type="ServiceInfo">VideoHeight</convert>
+		</widget>		
+		<widget source="session.CurrentService" render="PositionGauge" position="547,110" size="580,14" zPosition="2" pointer="vanity/pointer.png:580,0" transparent="1" >
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="400,47" size="850,32" zPosition="2" font="Regular;26" halign="center" noWrap="1" foregroundColor="white" transparent="1" backgroundColor="background">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<!-- Time/Movie -->
+		<widget source="session.CurrentService" render="Label" position="150,106" size="100,26" font="Regular;22" halign="right" foregroundColor="#538eff"  backgroundColor="black" transparent="1" >
+			<convert type="ServicePosition">Position,ShowHours</convert>
+		</widget>
+		<eLabel text="of" position="265,106" size="30,26" font="Regular;22" zPosition="2" halign="left" foregroundColor="grey" backgroundColor="black" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="300,106" size="120,26" font="Regular;22" halign="left" foregroundColor="#538eff" backgroundColor="black" transparent="1" >
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="1125,105" size="100,26" font="Regular;20" halign="right"  foregroundColor="#538eff" backgroundColor="black" transparent="1" >
+			<convert type="ServicePosition">Remaining,Negate,ShowHours</convert>
+		</widget>
+	</screen>
+	
+	<!-- MyTube Player MainScreen -->
+	<screen name="MyTubePlayerMainScreen" position="0,0" size="1280,720" title="MyTube Player MainScreen" flags="wfNoBorder" backgroundColor="black"   >
+		<ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="vanity/menu/fr_mainX.png"  />
+		<ePixmap position="50,655" zPosition="2" size="950,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="835,35" zPosition="3" size="380,38" pixmap="vanity/dmm2.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,180" zPosition="4" size="29,400" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,570" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="900,440" zPosition="1" size="264,176" pixmap="vanity/menu/ico_mytube.png" alphatest="blend" transparent="1"/>
+		<widget source="Title" render="Label" zPosition="2" position="60,37" size="1200,40" halign="left" font="Regular; 28" foregroundColor="#538eff" transparent="1" shadowColor="black" shadowOffset="-2,-2" backgroundColor="black" />
+		<widget name="config" position="60,120" size="725,28" zPosition="3" scrollbarMode="showNever" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1"/>
+		<widget source="feedlist" render="Listbox" position="60,180" size="730,400" zPosition="1" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_725x80.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+			{"templates":
+				{"default": (80,[
+						MultiContentEntryPixmapAlphaTest(pos = (5, 2), size = (100, 75), png = 4), # index 4 is the thumbnail
+						MultiContentEntryText(pos = (120, 1), size = (670, 25), font=0, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 1), # index 1 is the Title
+						MultiContentEntryText(pos = (120, 29), size = (400, 20), font=1, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 5), # index 5 is the Published Date
+						MultiContentEntryText(pos = (120, 54), size = (400, 20), font=1, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 6), # index 6 is the Views Count
+						MultiContentEntryText(pos = (490, 29), size = (200, 20), font=1, flags = RT_HALIGN_RIGHT | RT_VALIGN_TOP| RT_WRAP, text = 7), # index 7 is the duration
+						MultiContentEntryText(pos = (490, 54), size = (200, 20), font=1, flags = RT_HALIGN_RIGHT | RT_VALIGN_TOP| RT_WRAP, text = 8), # index 8 is the ratingcount
+					]),
+				"state": (80,[
+						MultiContentEntryText(pos = (10, 10), size = (600, 28), font=2, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (10, 40), size = (600, 50), font=3, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 1), # index 2 is the description
+					])
+				},
+				"fonts": [gFont("Regular", 20),gFont("Regular", 20),gFont("Regular", 22),gFont("Regular", 20)],
+				"itemHeight": 80
+			}
+			</convert>
+		</widget>
+		<!-- Widget Pig -->
+		<widget source="session.VideoPicture" render="Pig" position="836,108" size="395,222" zPosition="3" backgroundColor="#df0b1300"/>
+		<!-- Progres Bar Event Selected -->
+		<widget source="session.Event_Now" render="Progress" pixmap="vanity/tv_b_bar.png" size="375,1" position="840,334" zPosition="5" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget name="thumbnail" position="0,0" size="100,75" alphatest="on"/> # fake entry for dynamic thumbnail resizing, currently there is no other way doing this.
+		<widget name="HelpWindow" position="70,465"  size="1,1" zPosition="10" transparent="1" alphatest="on" />	
+		<widget name="VKeyIcon" position="0,0" size="0,0"/>
+		<widget name="key_red" position="95,653" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<widget name="key_green" position="395,653" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<widget name="key_yellow" position="695,653" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<eLabel text="Virtual Keyboard" position="995,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<ePixmap position="943,655" size="51,35" alphatest="blend" zPosition="2" pixmap="vanity/buttons/myt-gr.png" />
+		<widget name="ButtonBlue" position="943,655" size="51,35" alphatest="blend" zPosition="4" pixmap="vanity/buttons/myt-bl.png" />
+	</screen>
+	
+	<!-- MyTubeSuggestionsListScreen -->
+	<screen name="MyTubeSuggestionsListScreen" title="MyTube ListScreen" position="60,144" size="740,460" zPosition="2" flags="wfNoBorder" >
+		<ePixmap position="0,0" zPosition="4" size="700,440" pixmap="vanity/menu/bx_youtube.png" alphatest="on" />
+		<widget source="suggestionslist" render="Listbox" position="10,10" zPosition="6" size="740,290" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (10, 1), size = (420, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (520, 1), size = (180, 24), font=1, flags = RT_HALIGN_RIGHT, text = 1), # index 1 are the rtesults
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 18)],
+				"itemHeight": 29
+				}
+			</convert>
+		</widget>
+	</screen>
+	
+	<!-- MyTubeVideoHelpScreen -->
+	<screen name="MyTubeVideoHelpScreen" position="0,0" size="1280,720" title="MyTube Player HelpScreen" flags="wfNoBorder" >
+		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="vanity/menu/fr_mainX.png"  />
+		<ePixmap position="50,655" zPosition="2" size="50,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="835,35" zPosition="3" size="380,38" pixmap="vanity/dmm2.png" alphatest="blend" transparent="1" />
+		<ePixmap position="500,663" zPosition="3" size="400,36" pixmap="vanity/vanity2.png" alphatest="blend" transparent="1" />
+		<ePixmap position="900,440" zPosition="1" size="264,176" pixmap="vanity/menu/ico_mytube.png" alphatest="blend" transparent="1"/>
+		<widget source="Title" render="Label" zPosition="2" position="60,37" size="1200,40" halign="left" font="Regular; 28" foregroundColor="#538eff" transparent="1" shadowColor="black" shadowOffset="-2,-2" backgroundColor="black" />
+		<widget name="detailtext" position="65,120" size="725,600" zPosition="10" font="Regular;22" transparent="1" halign="left" valign="top" backgroundColor="#666666" />
+		<widget source="session.VideoPicture" render="Pig" position="836,108" size="395,222" zPosition="3" backgroundColor="#df0b1300"/>
+		<!-- Progres Bar Event Selected -->
+		<widget source="session.Event_Now" render="Progress" pixmap="vanity/tv_b_bar.png" size="375,1" position="840,334" zPosition="5" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget name="key_red" position="95,653" zPosition="2" size="300,40" font="Regular;22" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+	</screen>
+	
+	<!-- MyTubeVideoInfoScreen -->
+	<screen name="MyTubeVideoInfoScreen" position="0,0" size="1280,720" title="MyTube Player MainScreen" flags="wfNoBorder" >
+		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="vanity/menu/fr_mainX.png"  />
+		<ePixmap position="50,655" zPosition="2" size="50,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="835,35" zPosition="3" size="380,38" pixmap="vanity/dmm2.png" alphatest="blend" transparent="1" />
+		<ePixmap position="500,663" zPosition="3" size="400,36" pixmap="vanity/vanity2.png" alphatest="blend" transparent="1" />
+		<ePixmap position="900,440" zPosition="1" size="264,176" pixmap="vanity/menu/ico_mytube.png" alphatest="blend" transparent="1"/>
+		<widget source="Title" render="Label" zPosition="2" position="60,37" size="1200,40" halign="left" font="Regular; 28" foregroundColor="#538eff" transparent="1" shadowColor="black" shadowOffset="-2,-2" backgroundColor="black" />
+		<widget name="author" position="70,120" size="300,25" zPosition="10" font="Regular;22" transparent="1" halign="left" valign="top" />
+		<widget name="duration" position="70,150" size="300,25" zPosition="10" font="Regular;22" transparent="1" halign="left" valign="top" />
+		<widget name="published" position="70,180" size="300,25" zPosition="10" font="Regular;22" transparent="1" halign="left" valign="top" />
+		<widget name="views" position="70,210" size="300,25" zPosition="10" font="Regular;22" transparent="1" halign="left" valign="top" />
+		<widget name="tags" position="400,120" size="390,100" zPosition="10" font="Regular;22" transparent="1" halign="right" valign="top" foregroundColor="#538eff" />
+		<widget name="detailtext" position="50,300" size="770,300" zPosition="10" font="Regular;22" halign="center" foregroundColor="white" backgroundColor="black" transparent="1" />
+		<widget source="infolist" render="Listbox" position="50,470" size="750,135" zPosition="6" scrollbarMode="showNever" selectionDisabled="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+			{"templates":
+				{"default": (135,[
+						MultiContentEntryPixmapAlphaTest(pos = (10, 0), size = (180, 135), png = 0), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (190, 0), size = (180, 135), png = 1), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (370, 0), size = (180, 135), png = 2), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (550, 0), size = (180, 135), png = 3), # index 0 is the thumbnail							
+					]),
+				"state": (135,[
+						MultiContentEntryText(pos = (0, 35), size = (730, 65), font=2, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER| RT_WRAP, text = 0), # index 0 is the name
+					])
+				},
+				"fonts": [gFont("Regular", 20),gFont("Regular", 14),gFont("Regular", 28)],
+				"itemHeight": 135
+			}
+			</convert>
+		</widget>
+		<widget source="session.VideoPicture" render="Pig" position="836,108" size="395,222" zPosition="3" backgroundColor="#df0b1300"/>
+		<!-- Progres Bar Event Selected -->
+		<widget source="session.Event_Now" render="Progress" pixmap="vanity/tv_b_bar.png" size="375,1" position="840,334" zPosition="5" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget name="starsbg" position="685,580" size="100,20" pixmap="vanity/starsbar_empty.png"  zPosition="5" transparent="1" alphatest="on" />
+		<widget name="stars" position="685,580" size="100,20" pixmap="vanity/starsbar_filled.png" zPosition="6" transparent="1" />
+		<widget name="thumbnail" position="500,110" size="100,135" alphatest="on"/> # fake entry for dynamic thumbnail resizing, currently there is no other way doing this.
+        	<widget name="key_red" position="95,653" zPosition="2" size="300,40" font="Regular;22" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+	</screen>
+	
+	<!-- MyTubeSettingsScreen -->
+	<screen name="MyTubeSettingsScreen" position="0,0" size="1280,720" title="MyTubeSettingsScreen" flags="wfNoBorder" >
+		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="vanity/menu/fr_mainX.png"  />
+		<ePixmap position="50,655" zPosition="2" size="350,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="835,35" zPosition="3" size="380,38" pixmap="vanity/dmm2.png" alphatest="blend" transparent="1" />
+		<ePixmap position="900,440" zPosition="1" size="264,176" pixmap="vanity/menu/ico_mytube.png" alphatest="blend" transparent="1"/>
+		<widget source="Title" render="Label" zPosition="2" position="60,37" size="1200,40" halign="left" font="Regular; 28" foregroundColor="#538eff" transparent="1" shadowColor="black" shadowOffset="-2,-2" backgroundColor="black" />
+		<widget name="config" zPosition="2" position="65,120" size="725,500" scrollbarMode="showOnDemand"  transparent="1" selectionPixmap="vanity/icons/ls_720x24.png" />
+		<widget name="key_red" position="95,653" zPosition="2" size="300,40" font="Regular;22" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+		<widget name="key_green" position="395,653" zPosition="2" size="300,40" font="Regular;22" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+	</screen>
+	
+	<!-- MyTubeTasksScreen -->
+	<screen name="MyTubeTasksScreen" position="0,0" size="1280,720" title="MyTubeTasksScreen" flags="wfNoBorder" >
+		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="vanity/menu/fr_mainX.png"  />
+		<ePixmap position="50,655" zPosition="2" size="50,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="835,35" zPosition="3" size="380,38" pixmap="vanity/dmm2.png" alphatest="blend" transparent="1" />
+		<ePixmap position="500,663" zPosition="3" size="400,36" pixmap="vanity/vanity2.png" alphatest="blend" transparent="1" />
+		<widget source="Title" render="Label" zPosition="2" position="60,37" size="1200,40" halign="left" font="Regular; 28" foregroundColor="#538eff" transparent="1" shadowColor="black" shadowOffset="-2,-2" backgroundColor="black" />
+		<widget source="tasklist" render="Listbox" position="65,120" size="725,500" zPosition="7" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_640x36.png" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (10, 3), size = (210, 24), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 1 is the name
+						MultiContentEntryText(pos = (230, 3), size = (160, 24), font=1, flags = RT_HALIGN_RIGHT, text = 2), # index 2 is the state
+						MultiContentEntryProgress(pos = (400, 3), size = (110, 24), percent = -3), # index 3 should be progress 
+						MultiContentEntryText(pos = (520, 3), size = (110, 24), font=1, flags = RT_HALIGN_RIGHT, text = 4), # index 4 is the percentage
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 18)],
+				"itemHeight": 36
+				}
+			</convert>
+		</widget>
+		<widget source="session.VideoPicture" render="Pig" position="836,108" size="395,222" zPosition="3" backgroundColor="#df0b1300"/>
+		<!-- Progres Bar Event Selected -->
+		<widget source="session.Event_Now" render="Progress" pixmap="vanity/tv_b_bar.png" size="375,1" position="840,334" zPosition="5" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+	 	<widget name="key_red" position="95,653" zPosition="2" size="300,40" font="Regular;22" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+	</screen>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<!-- ############ CCCAM INFO ############ -->
+
+	<!-- (721) [PLUGINS] CCcam Main Menu -->
+	<screen name="CCcamInfoMain" position="0,0" size="1280,720" title="Info Main" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="menu" position="70,120" size="680,420" scrollbarMode="showOnDemand" zPosition="5" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="transpBlack" transparent="1" />
+	</screen>
+
+	<!-- (722) [PLUGINS] CCcam General Info -->
+	<screen name="CCcamInfoInfoScreen" position="0,0" size="1280,720" title="CCcam General Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="text" position="70,120" size="720,420" font="Regular;20" backgroundColor="transpBlack" transparent="1" />
+	</screen>
+	
+	<!-- (723) [PLUGINS] CCcam Client Info -->
+	<screen name="CCcamInfoSubMenu" position="0,0" size="1280,720" title="CCcam Client Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,120" zPosition="4" size="29,250" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,360" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="70,120" size="720,250" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+		<widget name="info" position="70,420" size="500,200" font="Regular;20" foregroundColor="#538eff" backgroundColor="transpBlack" transparent="1" />
+	</screen>
+
+	<!-- (724) [PLUGINS] CCcam Server Menu -->
+ 	<screen name="CCcamInfoServerMenu" position="0,0" size="1280,720" title="CCcam Server View" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,120" zPosition="4" size="29,250" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,360" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="70,120" size="720,250" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+		<widget name="info" position="70,420" size="500,200" font="Regular;20" foregroundColor="#538eff" backgroundColor="transpBlack" transparent="1" />
+ 	</screen>
+ 
+	<!-- (725) [PLUGINS] CCcam Share View -->
+ 	<screen name="CCcamShareViewMenu" position="0,0" size="1280,720" title="CCcam Share View" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,120" zPosition="4" size="29,340" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,455" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="70,120" size="720,340" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+ 		<widget name="uphops" position="70,490" size="260,25" font="Regular;20" foregroundColor="#538eff" transparent="1" backgroundColor="black" />
+ 		<widget name="cards" position="350,490" size="260,25" halign="right" font="Regular;20" transparent="1" backgroundColor="black" />
+ 		<widget name="providers" position="70,520" size="260,25" font="Regular;20" transparent="1" backgroundColor="black" />
+ 		<widget name="reshare" position="350,520" size="260,25" halign="right" font="Regular;20" foregroundColor="#538eff" transparent="1" backgroundColor="black" />
+ 		<ePixmap position="52,550" size="760,40" pixmap="vanity/menu/linebox.png" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="title" position="70,565" size="560,25" halign="left" font="Regular;22" foregroundColor="#538eff" backgroundColor="black" transparent="1" />	
+	</screen>
+ 
+	<!-- (726) [PLUGINS] CCcam Remote Box Info -->
+ 	<screen name="CCcamInfoRemoteBoxMenu" position="0,0" size="1280,720" title="CCcam Remote Box Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,110" zPosition="4" size="29,360" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,460" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="65,120" size="725,360" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png"  transparent="1" />
+ 	</screen>
+ 
+	<!-- (727) [PLUGINS] CCcam Info Shared -->
+ 	<screen name="CCcamInfoShareInfo" position="0,0" size="1280,720" title="CCcam Info Shared" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,110" zPosition="4" size="29,360" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,460" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="65,120" size="725,360" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png"  transparent="1" />
+	</screen>
+
+	<!-- (728) [PLUGINS] CCcam Ecm Info -->
+	<screen name="EcmInfoConfigMenu" position="0,0" size="1280,720" title="CCcam Ecm Info">
+		<panel name="GenericLayoutFullTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="65,120" size="720,160" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+	</screen>
+ 
+	<!-- (729) [PLUGINS] CCcam Ecm Info Selection -->
+	<screen name="CCcamInfoEcmInfoSelection" position="0,0" size="1280,720" title="CCcam Ecm Info Selection">
+		<panel name="GenericLayoutFullTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,120" zPosition="4" size="29,420" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,535" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="65,120" size="725,420" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+ 	</screen>
+
+	<!-- (730) [PLUGINS] CCcam Ecm Info Config Menu -->
+ 	<screen name="CCcamInfoConfigMenu" position="0,0" size="1280,720" title="CCcam Info Config Menu" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="65,120" size="720,160" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+ 	</screen>
+
+	<!-- (731) [PLUGINS] CCcam Ecm Info SubMenu -->
+	<screen nae="CCcamInfoSubMenu" position="center,center" size="1280,720" title="CCcam Info SubMenu" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,120" zPosition="4" size="29,250" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,365" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="65,120" size="725,250" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+		<widget name="info" position="70,270" size="720,165" font="Regular;16" transparent="1" />
+	</screen>
+
+	<!-- (733) [PLUGINS] CCcam Ecm Info Config Menu -->
+	<screen name="EcmInfoConfigMenu" position="0,0" size="1280,720" title="CCcam Ecm Info Config" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget name="config" position="70,120" size="720,160" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+	</screen>
+
+	<!-- (734) [PLUGINS] CCcam Info Config Menu -->
+	<screen name="CCcamInfoMenuConfig" position="0,0" size="1280,720" title="CCcam Info Menu Config" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="3Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,110" zPosition="4" size="29,360" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,460" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="65,120" size="725,360" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" transparent="1" />
+	</screen>
+
+	<!-- (735) [PLUGINS] CCcam Info Config Switcher -->
+	<screen name="CCcamInfoConfigSwitcher" position="0,0" size="1280,720" title="CCcam Info Config Switcher" flags="wfNoBorder" >
+		<panel name="GenericLayoutTemplate" />
+		<panel name="4Buttons" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<ePixmap position="765,110" zPosition="4" size="29,360" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,460" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+		<widget name="list" position="65,120" size="725,360" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png"  transparent="1" />
+	</screen>
+
+  	<!-- ############ OSCAM INFO ############ -->
+
+	<!-- (715) [PLUGINS] osCam Info Menu -->
+	<screen name="CamInfoMenu" position="0,0" size="1280, 720" title="osCam Info Menu" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget enableWrapAround="1" name="mainmenu" position="70,120" size="720,280" zPosition="5" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="transpBlack" transparent="1" />
+	</screen>
+		
+	<!-- (716) [PLUGINS] osCam ECM Info -->
+	<screen name="oscECMInfo" position="0,0" size="1280, 720" title="osCam ECM Info" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget enableWrapAround="1" name="output" position="70,120" size="720,300" zPosition="5" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="transpBlack" transparent="1" />
+	</screen>
+		
+	<!-- (717) [PLUGINS] osCam Info Setup -->
+	<screen name="CamInfoConfigScreen" position="0,0" size="1280,720" title="osCam Info Setup" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="2Buttons" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget enableWrapAround="1" name="config" position="70,120" size="720,360" zPosition="5" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="transpBlack" transparent="1" />
+		<widget enableWrapAround="1" name="status" render="Label" position="10,380" zPosition="5" size="640,70" font="Regular;16" halign="center" valign="center" transparent="1" />
+	</screen>
+		
+	<!-- (718) [PLUGINS] osCam Proxy Server Setup -->
+	<screen name="ProxyServerConfigScreen" position="0,0" size="1280,720" title="osCam Proxy Server Setup" flags="wfNoBorder">
+		<panel name="GenericLayoutTemplate" />
+		<panel name="2Buttons" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget enableWrapAround="1" name="config" position="70,120" size="720,360" scrollbarMode="showOnDemand" zPosition="5" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="transpBlack" transparent="1" />
+		<widget enableWrapAround="1" name="status" render="Label" position="70,520" zPosition="5" size="640,70" font="Regular;16" halign="left" valign="center" transparent="1" />
+	</screen>
+		
+	<!-- (719) [PLUGINS] OSCam Infos -->
+	<screen name="ShowOSCamInfoScreen" position="0,0" size="1280, 720" title="OSCam Infos" flags="wfNoBorder">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget enableWrapAround="1" name="oscInfomenu" position="70,120" size="720,380" zPosition="5" scrollbarMode="showOnDemand" selectionPixmap="vanity/icons/ls_720x24.png" backgroundColor="transpBlack" transparent="1" />
+	</screen>
+		
+	<!-- (720) [PLUGINS] osCam Info Clients -->
+	<screen name="oscEntitlements" position="0,0" size="1280,720" title="osCam Info Clients" flags="wfNoBorder" >
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<ePixmap pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<eLabel text=" " position="0,91" size="1280,550" font="Regular;26" zPosition="1" foregroundColor="black" backgroundColor="black"/>
+		<widget enableWrapAround="1" source="output" render="Listbox" position="70,120" size="1180,420" zPosition="5" scrollbarMode="showOnDemand" backgroundColor="transpBlack" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"templates":
+				{"default": (55,[
+					MultiContentEntryText(pos = (0, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is caid
+					MultiContentEntryText(pos = (90, 1), size = (150, 24), font=0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is csystem
+					MultiContentEntryText(pos = (250, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 2), # index 2 is hop 1
+					MultiContentEntryText(pos = (290, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 3), # index 3 is hop 2
+					MultiContentEntryText(pos = (330, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 4), # index 4 is hop 3
+					MultiContentEntryText(pos = (370, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 5), # index 5 is hop 4
+					MultiContentEntryText(pos = (410, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 6), # index 6 is hop 5
+					MultiContentEntryText(pos = (480, 1), size = (70, 24), font=0, flags = RT_HALIGN_LEFT, text = 7), # index 7 is sum of cards for caid
+					MultiContentEntryText(pos = (550, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 8), # index 8 is reshare
+					MultiContentEntryText(pos = (0, 25), size = (700, 24), font=1, flags = RT_HALIGN_LEFT, text = 9), # index 9 is providers
+					]),
+					"HD": (55,[
+					MultiContentEntryText(pos = (0, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is caid
+					MultiContentEntryText(pos = (90, 1), size = (150, 24), font=0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is csystem
+					MultiContentEntryText(pos = (250, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 2), # index 2 is hop 1
+					MultiContentEntryText(pos = (290, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 3), # index 3 is hop 2
+					MultiContentEntryText(pos = (330, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 4), # index 4 is hop 3
+					MultiContentEntryText(pos = (370, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 5), # index 5 is hop 4
+					MultiContentEntryText(pos = (410, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 6), # index 6 is hop 5
+					MultiContentEntryText(pos = (480, 1), size = (70, 24), font=0, flags = RT_HALIGN_LEFT, text = 7), # index 7 is sum of cards for caid
+					MultiContentEntryText(pos = (550, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 8), # index 8 is reshare
+					MultiContentEntryText(pos = (630, 1), size = (1024, 50), font=1, flags = RT_HALIGN_LEFT, text = 9), # index 9 is providers
+					]),
+				},
+				"fonts": [gFont("Regular", 18),gFont("Regular", 14),gFont("Regular", 24),gFont("Regular", 20)],
+				"itemHeight": 56
+				}
+			</convert>
+		</widget>
+	</screen>
+		
+	<!-- (721) [PLUGINS] osCam Client Info -->
+	<screen name="oscInfo" position="80,90" size="1120, 600" title="Client Info" >
+		<!-- widget name="output" position="10,45" size="1120,600" zPosition="5" scrollbarMode="showOnDemand" -->
+		<widget name="status" position="8,95" size="1125,510" zPosition="2" font="Regular; 19" backgroundColor="transpBlack" transparent="1" />	
+	</screen>
+</skin>

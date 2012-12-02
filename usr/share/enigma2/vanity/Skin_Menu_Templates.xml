@@ -1,0 +1,261 @@
+<skin>
+	<!-- ####### MENU SCREENS TEMPLATE ####### -->
+	<screen name="ScreenMenuTemplate">
+		<panel name="GenericLayoutFullTemplate" />
+		<panel name="PigTemplate" />
+		<panel name="ScrollBarTemplate" />
+		<!-- menu list -->
+		<ePixmap pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" zPosition="3" alphatest="blend" transparent="1" />
+		<widget source="menu" render="Listbox" position="70,120" zPosition="2" size="720,440" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1" scrollbarMode="showAlways">
+			<convert type="TemplatedMultiContent">
+			{
+				"template": [
+					MultiContentEntryText(pos = (51, 0), size = (680, 38), flags = RT_HALIGN_LEFT, text = 0)
+				],
+				"fonts": [gFont("Regular", 28)],
+				"itemHeight": 40
+			}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- ####### SCROLLBAR MENU TEMPLATE ####### -->
+	<screen name="ScrollBarTemplate">
+		<ePixmap position="765,120" zPosition="4" size="29,440" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,555" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+	</screen>
+	<screen name="ScrollBarTemplate450">
+		<ePixmap position="765,120" zPosition="4" size="29,450" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,568" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+	</screen>
+	<screen name="ScrollBarTemplate480">
+		<ePixmap position="765,120" zPosition="4" size="29,480" pixmap="vanity/icons/maxbar.png" alphatest="blend" transparent="1" />
+		<ePixmap position="765,597" zPosition="4" size="29,40" pixmap="vanity/icons/endbar.png" alphatest="blend" transparent="1" />
+	</screen>
+
+        <!-- ####### TEMPLATE FOR ICONS OF "MENU SELECTED ITEM" (16-03) ####### -->
+	<screen name="MenuIconsTemplate">
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/media_player.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">media_player</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/timer_edit.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">timer_edit</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">emu</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/ico_caminfo.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">cs</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">cloud</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/info_screen.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">info_screen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/plugin_selection.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">plugin_selection</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/ico_code.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">scripts</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/setup_selection.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">setup_selection</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/standby_restart_list.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">standby_restart_list</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+
+
+
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">scart_switch</convert>
+			<convert type="ConditionalShowHide" /> 
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/ico_noico.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">dmc_mainmenu</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="menu" render="Pixmap" pixmap="vanity/menu/setup_noico.png" position="840,370" size="380,256" alphatest="blend" transparent="1" >
+			<convert type="MenuEntryCompare">dvd_player</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+	
+	
+	
+
+
+	<!-- (086) ####### MENU ####### -->
+	<screen name="Menu" position="0,0" size="1280,720"  title="Menu" flags="wfNoBorder" >
+		<panel name="ScreenMenuTemplate" />
+		<panel name="PigTemplate" />
+		<widget source="menu" render="Listbox" position="70,120" size="700,450" scrollbarMode="showOnDemand" backgroundPixmap="vanity/icons/butselectionbw.png" selectionPixmap="vanity/icons/butselection.png" transparent="1" >
+			<convert type="StringList" />
+		</widget>
+	</screen> 
+
+	<!-- (005) ####### MAIN MENU ####### -->
+	<screen name="menu_mainmenu" position="0,0" size="1280,720" title="Main Menu"  flags="wfNoBorder" >
+		<panel name="ScreenMenuTemplate" />
+		<panel name="MenuIconsTemplate" />
+		<panel name="PigTemplate" />
+	</screen>
+	
+	<!-- (006) ####### MENU SETUP - CONFIGURATION ####### (12-02) -->
+	<screen name="menu_setup" position="0,0" size="1280,720" title="Main Menu Setup"  flags="wfNoBorder" >
+		<panel name="ScreenMenuTemplate" />
+		<panel name="PigTemplate" />
+	</screen>
+	
+	<!-- (007) ####### MENU SCAN - RICERCA CANALI ####### (12-02) -->
+	<screen name="menu_scan" position="0,0" size="1280,720" title="Main Menu Channel Scan" flags="wfNoBorder">
+		<panel name="ScreenMenuTemplate" />
+		<panel name="PigTemplate" />
+	</screen>
+	
+	<!-- (008) ####### MENU SYSTEM - SISTEMA ####### (12-02) -->
+	<screen name="menu_system" position="0,0" size="1280,720" title="Main Menu System"  flags="wfNoBorder">
+		<panel name="ScreenMenuTemplate" />
+		<panel name="PigTemplate" />
+	</screen>
+	
+	<!-- (011) ####### MENU HDD ####### (15-02) -->
+	<screen name="menu_harddisk" position="0,0" size="1280,720" title="Main Menu HDD"  flags="wfNoBorder">
+		<panel name="ScreenMenuTemplate" />
+		<panel name="PigTemplate" />
+	</screen>
+	
+	<!-- (012) ####### MENU INFORMATION - INFORMAZIONI ####### (13-02) -->
+	<screen name="menu_information" position="0,0" size="1280,720" title="Menu Information" flags="wfNoBorder" >
+		<panel name="ScreenMenuTemplate" />
+		<panel name="PigTemplate" />
+
+	</screen>
+	
+	<!-- (013) ####### MENU SHUTDOWN ####### (12-02) -->
+	<screen name="menu_shutdown" position="0,0" size="1280,720" title="Menu ShutDown"  flags="wfNoBorder">
+		<panel name="ScreenMenuTemplate" />
+		<panel name="PigTemplate" />
+	</screen>
+
+	<!-- (013) ####### MENU CLOUD ####### (12-02) -->
+	<screen name="menu_cloud" position="0,0" size="1280,720" title="Menu Cloud"  flags="wfNoBorder" >
+		<panel name="ScreenMenuTemplate" />
+		<panel name="MenuIconsTemplate" />
+		<panel name="PigTemplate" />
+	</screen>
+	
+		
+	<!-- ####### GENERIC FRAME TEMPLATES ####### -->
+	<screen name="GenericLayoutTemplate">
+		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="vanity/menu/fr_mainX.png"  />
+		<ePixmap position="835,35" zPosition="3" size="380,38" pixmap="vanity/dmm2.png" alphatest="blend" transparent="1" />
+		<widget source="Title" render="Label" zPosition="2" position="60,37" size="1200,40" halign="left" font="Regular; 28" foregroundColor="#538eff" transparent="1" shadowColor="black" shadowOffset="-2,-2" backgroundColor="black" />
+	</screen>
+
+
+	<!-- ####### GENERIC FULL FRAME TEMPLATES ####### -->
+	<screen name="GenericLayoutFullTemplate">
+		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="vanity/menu/fr_mainX.png"  />
+		<ePixmap position="835,35" zPosition="3" size="380,38" pixmap="vanity/dmm2.png" alphatest="blend" transparent="1" />
+		<ePixmap position="470,663" zPosition="3" size="400,36" pixmap="vanity/vanity2.png" alphatest="blend" transparent="1" />
+		<widget source="Title" render="Label" zPosition="2" position="60,37" size="1200,40" halign="left" font="Regular; 28" foregroundColor="#538eff" transparent="1" shadowColor="black" shadowOffset="-2,-2" backgroundColor="black" />
+	</screen>
+
+	<!-- ####### GENERIC FULL FRAME TEMPLATES ####### -->
+	<screen name="GenericLayoutSmallTemplate">
+		<ePixmap  position="0,0" zPosition="-1" size="1280,720" pixmap="vanity/menu/fr_mainX.png"  />
+		<widget source="Title" render="Label" zPosition="2" position="60,37" size="1200,40" halign="left" font="Regular; 28" foregroundColor="#538eff" transparent="1" shadowColor="black" shadowOffset="-2,-2" backgroundColor="black" />
+	</screen>
+
+	<!-- ####### UNIVERSAL PIG TEMPLATE ####### -->
+	<screen name="PigTemplate">
+		<widget source="session.VideoPicture" render="Pig" position="836,108" size="395,222" zPosition="3" backgroundColor="#df0b1300"/>
+		<!-- Progres Bar Event Selected -->
+		<widget source="session.Event_Now" render="Progress" pixmap="vanity/tv_b_bar.png" size="375,1" position="840,334" zPosition="5" backgroundColor="black" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+	</screen>
+
+	<!-- ####### GENERIC SCREEN WITH 4 BUTTONS TEMPLATE ####### -->
+	<screen name="4Buttons">
+		<ePixmap position="50,655" zPosition="2" size="950,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget position="95,659"  size="250,30" name="key_red"    font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="395,659" size="250,30" name="key_green"  font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="695,659" size="250,30" name="key_yellow" font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="995,659" size="250,30" name="key_blue"   font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+	</screen>
+
+	<!-- ####### GENERIC SCREEN WITH 3 BUTTONS TEMPLATE ####### -->
+	<screen name="3Buttons">
+		<ePixmap position="50,655" zPosition="2" size="650,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget position="95,659"  size="250,30" name="key_red"    font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="395,659" size="250,30" name="key_green"  font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="695,659" size="250,30" name="key_yellow" font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="995,659" size="250,30" name="key_blue"   font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+	</screen>
+
+	<!-- ####### GENERIC SCREEN WITH 2 BUTTONS TEMPLATE ####### -->
+	<screen name="2Buttons">
+		<ePixmap position="50,655" zPosition="2" size="350,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget position="95,659"  size="250,30" name="key_red"    font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="395,659" size="250,30" name="key_green"  font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="695,659" size="250,30" name="key_yellow" font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="995,659" size="250,30" name="key_blue"   font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+	</screen>
+  
+	<!-- ####### GENERIC SCREEN WITH 1 BUTTONS TEMPLATE ####### -->
+	<screen name="1Buttons">
+		<ePixmap position="50,655" zPosition="2" size="150,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget position="95,659"  size="250,30" name="key_red"    font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="395,659" size="250,30" name="key_green"  font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="695,659" size="250,30" name="key_yellow" font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget position="995,659" size="250,30" name="key_blue"   font="Regular;22" halign="left" backgroundColor="black" transparent="1" zPosition="4" />
+	</screen>
+
+	<!-- ####### GENERIC SCREEN WITH 4 BUTTONS SOURCE TEMPLATE ####### -->
+	<screen name="4ButtonsW">
+		<ePixmap position="50,655" zPosition="2" size="950,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget source="key_red" render="Label"  position="95,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<widget source="key_green" render="Label"  position="395,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<widget source="key_yellow" render="Label"  position="695,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<widget source="key_blue" render="Label" position="995,659" zPosition="2" size="300,40" halign="left" font="Regular;22" backgroundColor="black" transparent="1"/>
+	</screen>
+
+	<!-- ####### GENERIC SCREEN WITH 3 BUTTONS SOURCE TEMPLATE ####### -->
+	<screen name="3ButtonsW">
+		<ePixmap position="50,655" zPosition="2" size="650,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget source="key_red" render="Label"  position="95,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<widget source="key_green" render="Label"  position="395,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<widget source="key_yellow" render="Label"  position="695,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+	</screen>
+
+	<!-- ####### GENERIC SCREEN WITH 2 BUTTONS SOURCE TEMPLATE ####### -->
+	<screen name="2ButtonsW">
+		<ePixmap position="50,655" zPosition="2" size="350,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget source="key_red" render="Label"  position="95,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+		<widget source="key_green" render="Label"  position="395,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+	</screen>
+
+	<!-- ####### GENERIC SCREEN WITH 1 BUTTONS SOURCE TEMPLATE ####### -->
+	<screen name="1ButtonsW">
+		<ePixmap position="50,655" zPosition="2" size="150,36" pixmap="vanity/menu/colorbar.png" alphatest="blend" transparent="1" />
+		<widget source="key_red" render="Label"  position="95,659" zPosition="2" size="300,40" font="Regular;22" halign="left" backgroundColor="black" transparent="1" />
+	</screen>
+
+	<screen name="ScreenPigTemplate">
+		<panel name="ScreenGenericTemplate" />
+		<panel name="PigTemplate" />
+	</screen>
+</skin>
